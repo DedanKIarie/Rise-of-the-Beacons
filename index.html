@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,119 +7,88 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cinzel:wght@700&display=swap" rel="stylesheet">
     <style>
         /* Custom styles for the documentation website */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            /* gray-900 */
+            background-color: #111827; /* gray-900 */
         }
-
         h1 {
             font-family: 'Cinzel', serif;
         }
-
-        h2,
-        h3,
-        h4 {
+        h2, h3, h4 {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
-            color: #f9fafb;
-            /* gray-50 */
+            color: #f9fafb; /* gray-50 */
         }
-
         .prose {
-            max-width: 80ch;
-            /* Optimal reading width */
+            max-width: 80ch; /* Optimal reading width */
         }
-
         .prose h2 {
             font-size: 1.875rem;
             line-height: 2.25rem;
             margin-top: 2.5rem;
             margin-bottom: 1.25rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid #4b5563;
-            /* gray-600 */
+            border-bottom: 1px solid #4b5563; /* gray-600 */
             letter-spacing: 0.025em;
         }
-
         .prose h3 {
             font-size: 1.5rem;
             line-height: 2rem;
             margin-top: 2rem;
             margin-bottom: 1rem;
         }
-
-        .prose h4 {
+         .prose h4 {
             font-size: 1.25rem;
             line-height: 1.75rem;
             margin-top: 1.5rem;
             margin-bottom: 0.5rem;
-            color: #e5e7eb;
-            /* gray-200 */
+            color: #e5e7eb; /* gray-200 */
         }
-
-        .prose p,
-        .prose ul,
-        .prose li {
+        .prose p, .prose ul, .prose li {
             font-size: 1rem;
             line-height: 1.75rem;
-            color: #d1d5db;
-            /* gray-300 */
+            color: #d1d5db; /* gray-300 */
         }
-
         .prose ul {
             list-style-position: inside;
             list-style-type: disc;
             padding-left: 1rem;
         }
-
         .prose ul ul {
-            padding-left: 1.5rem;
+             padding-left: 1.5rem;
         }
-
         .prose li {
             margin-top: 0.5rem;
         }
-
         .prose strong {
-            color: #f9fafb;
-            /* gray-50 */
+            color: #f9fafb; /* gray-50 */
             font-weight: 600;
         }
-
         .prose code {
-            background-color: #374151;
-            /* gray-700 */
-            color: #f3f4f6;
-            /* gray-200 */
+            background-color: #374151; /* gray-700 */
+            color: #f3f4f6; /* gray-200 */
             padding: 0.2em 0.4em;
             margin: 0;
             font-size: 85%;
             border-radius: 6px;
         }
-
         .tab-button {
             transition: all 0.2s ease-in-out;
             border-bottom: 2px solid transparent;
         }
-
         .tab-button.active {
-            color: #a5b4fc;
-            /* indigo-300 */
-            border-bottom-color: #a5b4fc;
-            /* indigo-300 */
+            color: #a5b4fc; /* indigo-300 */
+            border-bottom-color: #a5b4fc; /* indigo-300 */
         }
     </style>
 </head>
-
 <body class="text-gray-100">
 
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
-
+        
         <!-- Header -->
         <header class="text-center mb-10 md:mb-12">
             <h1 class="text-5xl md:text-6xl font-bold text-white tracking-wider">Rise of Beacons</h1>
@@ -128,20 +96,21 @@
         </header>
 
         <!-- Tabs -->
-        <div class="mb-8 flex justify-center border-b border-gray-700">
-            <button id="tab-gdd"
-                class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
+        <div class="mb-8 flex flex-wrap justify-center border-b border-gray-700">
+            <button id="tab-gdd" class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
                 Game Design
             </button>
-            <button id="tab-plan"
-                class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
+            <button id="tab-plan" class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
                 Development Plan
+            </button>
+            <button id="tab-monetization" class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
+                Monetization
             </button>
         </div>
 
         <!-- Content Area -->
         <main id="content-area" class="prose mx-auto bg-gray-800/50 rounded-lg p-6 md:p-8 shadow-2xl">
-
+            
             <!-- Game Design Document Content -->
             <div id="content-gdd" class="hidden">
                 <!-- Content will be injected by JavaScript -->
@@ -152,22 +121,27 @@
                 <!-- Content will be injected by JavaScript -->
             </div>
 
-        </main>
+            <!-- Monetization Content -->
+            <div id="content-monetization" class="hidden">
+                <!-- Content will be injected by JavaScript -->
+            </div>
 
+        </main>
+        
         <footer class="text-center mt-12 text-gray-500 text-sm">
-            <p>&copy; 2025 - Rise of Beacons Development Team</p>
+            <p>&copy; 2024 - Rise of Beacons Development Team</p>
         </footer>
 
     </div>
 
     <script>
         // JavaScript for tab functionality and content injection
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
 
             const gddContent = `
                 <h2>I. Core Concepts (Refined)</h2>
                 <p><strong>Game Name:</strong> Rise of Beacons</p>
-                <p><strong>Core Loop:</strong> Player places a <strong>Star Beacon</strong>, spawns <strong>Civilians</strong>, transforms them using specialized <strong>Beacons</strong> (Farmer, Lumberjack, Miner, Soldier), builds an <strong>Economy</strong> and <strong>Army</strong>, achieves <strong>Kingdom</strong> status, and wages <strong>War</strong> to become the dominant power.</p>
+                <p><strong>Core Loop:</strong> Player places a <strong>Star Beacon</strong>, spawns <strong>Civilians</strong>, transforms them using specialized <strong>Beacons</strong> (Farmer, Lumberjack, Miner, Soldier), builds an <strong>Economy</strong> and <strong>Army</strong>, achieves <strong>Kingdom</strong> status by building a <strong>Castle</strong>, and wages <strong>War</strong> to become the dominant power.</p>
 
                 <h2>II. Detailed Gameplay Phases</h2>
                 <h3>Phase 1: The Foundation - Your First Beacon</h3>
@@ -175,42 +149,41 @@
                 <ul>
                     <li><strong>Placement:</strong> The first action a player takes. Once placed, it cannot be moved, only destroyed in war. It defines the center of their territory.</li>
                     <li><strong>Health:</strong> The Star Beacon has a very high health pool, making it the final objective in a siege.</li>
-                    <li><strong>Territory:</strong> It projects a small initial radius of influence where the player can build. This radius can be expanded through upgrades.</li>
-                    <li><strong>GUI Menu (Accessed by clicking the beacon):</strong>
-                        <ul>
-                            <li><strong>[Kingdom Stats]:</strong> Shows population, resource counts (Gold, Food, Wood, Stone), army size, and kingdom name.</li>
-                            <li><strong>[Buy Beacons]:</strong> A sub-menu for purchasing different types of specialized beacons.</li>
-                            <li><strong>[Buy Buildings]:</strong> A sub-menu for purchasing economic, military, and defensive structures.</li>
-                            <li><strong>[Kingdom Upgrades]:</strong> A sub-menu for purchasing global upgrades for the kingdom.</li>
-                        </ul>
-                    </li>
                 </ul>
                 <h4>2. Core Module Scripts:</h4>
                 <ul>
-                    <li><strong>KingdomManager (Server):</strong> Properties: <code>Player</code>, <code>Resources{Gold, Food, Wood, Stone}</code>, <code>Population</code>, <code>UnitCap</code>, <code>OwnedBeacons[]</code>, <code>OwnedBuildings[]</code>, <code>KingdomStatus ("Nomad", "Settlement", "Kingdom")</code>. Functions: <code>AddResources()</code>, <code>SpendResources()</code>, <code>UpdatePopulation()</code>, <code>CheckKingdomStatus()</code>. Each player gets their own instance of this manager.</li>
-                    <li><strong>UIManager (Client):</strong> Purpose: Renders all GUIs. It reads data from the player's <code>KingdomManager</code> to display up-to-date information. It handles all button clicks and sends requests to the server.</li>
-                    <li><strong>PlacementManager (Client/Server):</strong> Purpose: Handles placing buildings. When a player buys a building, this module creates a transparent "ghost" version of the model that follows the player's mouse. It shows a green or red highlight to indicate if the placement is valid. Clicking confirms the placement and sends the position to the server.</li>
+                    <li><strong>KingdomManager (Server):</strong> Manages all player-specific data like resources, population, and buildings.</li>
+                    <li><strong>UIManager (Client):</strong> Renders all GUIs and handles player input.</li>
+                    <li><strong>PlacementManager (Client/Server):</strong> Handles the logic for placing buildings.</li>
                 </ul>
-
+                
                 <h3>Phase 2: Building a Sustainable Economy</h3>
-                <p>This phase is about creating resource-gathering loops to fuel growth.</p>
-                <!-- NOTE: The rest of the GDD would be filled in here following the same pattern -->
-
-                <h2>III. Advanced Systems & Late Game</h2>
-                <h3>1. Kingdom Upgrades</h3>
-                <p>Accessed via the Star Beacon, these are permanent, global buffs for your kingdom, purchased with resources.</p>
+                <h4>1. Beacon Transformation & RNG</h4>
+                <p>When a Civilian touches a specialized beacon, it transforms them. We're adding an element of chance to make this more exciting:</p>
                 <ul>
-                    <li><strong>Beacon Expansion:</strong> Increases the building radius around your Star Beacon.</li>
-                    <li><strong>Logistics:</strong> Increases the base speed of all your NPCs.</li>
-                    <li><strong>Drill Sergeant:</strong> Your military units spawn with slightly more health.</li>
-                    <li><strong>Efficient Engineering:</strong> Reduces the Wood and Stone cost of all buildings.</li>
-                    <li><strong>Agricultural Subsidies:</strong> Farms and Farmers produce 10% more Gold and Food.</li>
+                    <li><strong>Standard Transformation:</strong> 95% chance the Civilian transforms into the standard unit (e.g., Farmer, Soldier).</li>
+                    <li><strong>Epic Transformation (RNG):</strong> 5% chance the Civilian transforms into a visually distinct and more powerful "Epic" version (e.g., a "Master Farmer" who generates more gold, or a "Knight Captain" with higher health). This adds a free-to-play luck factor.</li>
                 </ul>
-                <!-- NOTE: The rest of the GDD would be filled in here -->
+
+                <h3>Phase 3: Building an Army & The Path to War</h3>
+                <h4>1. Becoming a Kingdom: The Castle</h4>
+                <ul>
+                    <li><strong>Trigger for War:</strong> A player cannot declare war or be declared upon until they have constructed a <strong>Castle</strong>. The Castle is an expensive, late-game building that signifies a player's arrival as a true Kingdom.</li>
+                    <li><strong>King & Prince Spawning:</strong> The NPC King and the powerful Prince unit will only spawn after the Castle is built, making its construction a major strategic goal.</li>
+                </ul>
+                <h4>2. Waging War & Conquest</h4>
+                <ul>
+                    <li><strong>Victory Condition:</strong> The attacking player's Prince must touch the enemy's Star Beacon.</li>
+                    <li><strong>Consequences of Defeat:</strong> All non-premium buildings and units are destroyed. A portion of resources are stolen.</li>
+                </ul>
+                <h4>3. Aftermath & Rebuilding</h4>
+                <ul>
+                    <li><strong>The "Rebuild Kingdom" Option:</strong> After being defeated, a player is offered a one-time purchase (Developer Product) to instantly restore their essential economic buildings (e.g., 1 Farm, 1 Lumber Mill, 1 Quarry, 3 Shelters) to get back into the game faster.</li>
+                </ul>
             `;
 
             const planContent = `
-                <h2>IV. Accelerated Development Plan (2-Week Sprint)</h2>
+                <h2>Accelerated Development Plan (3-Week Sprint)</h2>
                 <h3>Team Roles:</h3>
                 <ul>
                     <li><strong>Dedan:</strong> Lead Scripter, UI Designer, Builder</li>
@@ -218,72 +191,95 @@
                     <li><strong>Adams:</strong> Lead Builder, Lead Animator</li>
                 </ul>
                 
-                <h3><strong>Week 1 (July 8 - July 14): Core Loop Sprint</strong></h3>
+                <h3><strong>Week 1: Core Loop Sprint</strong></h3>
                 <p><strong>Goal:</strong> Create a functional economic loop. From placing a beacon to generating gold.</p>
                 <ul>
-                    <li><strong>Dedan (Scripting & UI):</strong>
-                        <ul>
-                            <li>Script core <code>KingdomManager</code> (resource tracking) and <code>UIManager</code> (displaying data).</li>
-                            <li>Design and implement the full UI for the Star Beacon menu.</li>
-                            <li>Connect UI buttons to the backend event system.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Ike (Scripting, Models & Animation):</strong>
-                        <ul>
-                            <li>Script the <code>PlacementManager</code> and the <code>JobManager</code>.</li>
-                            <li>Model all initial assets: <code>Star Beacon</code>, <code>Civilian</code>, <code>Farmer Beacon</code>, <code>Farmer</code> NPC, <code>Farm</code>, and <code>Shelter</code>.</li>
-                            <li>Animate the essential actions: idle, walking, farming, and the Civilian-to-Farmer transformation.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Adams (Building & Animation):</strong>
-                        <ul>
-                            <li>Build a polished, well-lit test map with clear areas for building.</li>
-                            <li>Create all necessary visual effects (VFX): beacon placement, building completion, and NPC spawn.</li>
-                        </ul>
-                    </li>
+                    <li><strong>Dedan (Scripting & UI):</strong> Script core <code>KingdomManager</code> (resource tracking) and <code>UIManager</code> (displaying data). Design and implement the full UI for the Star Beacon menu.</li>
+                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the <code>PlacementManager</code> and the <code>JobManager</code>. Model all initial assets: <code>Star Beacon</code>, <code>Civilian</code>, <code>Farmer Beacon</code>, <code>Farmer</code> NPC, <code>Farm</code>, and <code>Shelter</code>. Animate essential actions.</li>
+                    <li><strong>Adams (Building & Animation):</strong> Build a polished, well-lit test map. Create all necessary visual effects (VFX): beacon placement, building completion, and NPC spawn.</li>
                 </ul>
 
-                <h3><strong>Week 2 (July 15 - July 21): Combat Prototype Sprint</strong></h3>
+                <h3><strong>Week 2: Combat Prototype Sprint</strong></h3>
                 <p><strong>Goal:</strong> Implement a basic, playable combat scenario.</p>
+                <ul>
+                    <li><strong>Dedan (Scripting & UI):</strong> Script the high-level combat system (health, damage calculations, war state). Update the UI to show unit health.</li>
+                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the unit AI for targeting and attacking. Script the logic for the <code>Soldier Beacon</code>. Model the <code>Soldier</code> NPC and <code>Armory</code>. Animate combat actions.</li>
+                    <li><strong>Adams (Building & Animation):</strong> Design a combat arena on the map. Refine combat animations and create impact VFX.</li>
+                </ul>
+
+                <h3><strong>Week 3: Advanced Features & Monetization Sprint</strong></h3>
+                <p><strong>Goal:</strong> Implement the Castle, RNG, and premium features.</p>
                 <ul>
                     <li><strong>Dedan (Scripting & UI):</strong>
                         <ul>
-                            <li>Script the high-level combat system (health, damage calculations, war state).</li>
-                            <li>Update the UI to show unit health and status.</li>
+                            <li>Script the Castle logic as the trigger for war and King/Prince spawning.</li>
+                            <li>Implement all monetization logic: Game Passes (Mercenaries, VIP, Skins) and Developer Products (Rebuild, Boosts).</li>
+                            <li>Create all UI for these purchase options.</li>
                         </ul>
                     </li>
                     <li><strong>Ike (Scripting, Models & Animation):</strong>
                         <ul>
-                            <li>Script the unit AI for targeting and attacking enemies.</li>
-                            <li>Script the logic for the <code>Soldier Beacon</code> and transforming Civilians into Soldiers.</li>
-                            <li>Model the <code>Soldier</code> NPC and the <code>Armory</code> building.</li>
-                            <li>Animate the core combat actions: melee attack, taking damage, and a death/despawn animation.</li>
+                            <li>Script the RNG system for beacon transformations.</li>
+                            <li>Model the new <strong>Castle</strong> building and one or two "Epic" NPC variants.</li>
+                            <li>Model a few cosmetic skin examples for the Castle or a unit.</li>
                         </ul>
                     </li>
                     <li><strong>Adams (Building & Animation):</strong>
                         <ul>
-                            <li>Design and build a small arena/combat zone on the test map.</li>
-                            <li>Refine all combat animations to feel impactful. Create sword-clash and hit-impact visual effects.</li>
+                            <li>Create unique animations for the new Epic NPC variants.</li>
+                            <li>Design a grand "rebuilding" VFX and a "boost active" VFX.</li>
                         </ul>
                     </li>
                 </ul>
             `;
 
+            const monetizationContent = `
+                <h2>Monetization Strategy</h2>
+                <p>Our strategy is to provide value and convenience to paying players without creating a hard pay-to-win environment. Free-to-play players should always have a viable path to success through skill and dedication.</p>
+                
+                <h3>Game Passes (One-Time Purchase)</h3>
+                <ul>
+                    <li><strong>Mercenary Contract:</strong> Grants the player a small squad of powerful Mercenary units. These units are permanent and will not be destroyed if their Kingdom is defeated, providing a persistent foundation for their army.</li>
+                    <li><strong>Cosmetic Skin Packs:</strong> Unlocks a set of themed cosmetic skins for buildings and units (e.g., "Volcanic" skins, "Glacial" skins). These are purely visual and offer no gameplay advantage.</li>
+                    <li><strong>VIP Subscription:</strong> A monthly subscription that grants a bundle of perks:
+                        <ul>
+                            <li>A unique chat tag and color.</li>
+                            <li>A small daily stipend of Gold.</li>
+                            <li>A 5% boost to all resource generation.</li>
+                            <li>A +1% chance for Epic transformations from beacons.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>Developer Products (Consumable Purchases)</h3>
+                <ul>
+                    <li><strong>Kingdom Rebuild:</strong> After being defeated, a player is offered this one-time purchase to instantly restore their essential economic buildings (e.g., 1 Farm, 1 Lumber Mill, 1 Quarry, 3 Shelters) to get back into the game faster.</li>
+                    <li><strong>Resource Boosts:</strong> Players can purchase boosts that double the production of a specific resource (Gold, Wood, or Stone) for a limited time (e.g., 15 minutes).</li>
+                </ul>
+            `;
+
             const tabGddButton = document.getElementById('tab-gdd');
             const tabPlanButton = document.getElementById('tab-plan');
+            const tabMonetizationButton = document.getElementById('tab-monetization');
+            
             const contentGdd = document.getElementById('content-gdd');
             const contentPlan = document.getElementById('content-plan');
+            const contentMonetization = document.getElementById('content-monetization');
 
             // Inject the content into the respective divs
             contentGdd.innerHTML = gddContent;
             contentPlan.innerHTML = planContent;
+            contentMonetization.innerHTML = monetizationContent;
 
             function setActiveTab(activeButton, activeContent) {
                 // Reset all buttons and content visibility
                 tabGddButton.classList.remove('active');
                 tabPlanButton.classList.remove('active');
+                tabMonetizationButton.classList.remove('active');
+
                 contentGdd.classList.add('hidden');
                 contentPlan.classList.add('hidden');
+                contentMonetization.classList.add('hidden');
 
                 // Set the active button and show its content
                 activeButton.classList.add('active');
@@ -292,6 +288,7 @@
 
             tabGddButton.addEventListener('click', () => setActiveTab(tabGddButton, contentGdd));
             tabPlanButton.addEventListener('click', () => setActiveTab(tabPlanButton, contentPlan));
+            tabMonetizationButton.addEventListener('click', () => setActiveTab(tabMonetizationButton, contentMonetization));
 
             // Set the initial active tab on page load
             setActiveTab(tabGddButton, contentGdd);
@@ -299,5 +296,4 @@
     </script>
 
 </body>
-
 </html>
