@@ -106,6 +106,9 @@
             <button id="tab-monetization" class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
                 Monetization
             </button>
+            <button id="tab-community" class="tab-button text-lg font-semibold py-3 px-6 -mb-px text-gray-400 hover:text-white focus:outline-none">
+                Community
+            </button>
         </div>
 
         <!-- Content Area -->
@@ -123,6 +126,11 @@
 
             <!-- Monetization Content -->
             <div id="content-monetization" class="hidden">
+                <!-- Content will be injected by JavaScript -->
+            </div>
+
+            <!-- Community Content -->
+            <div id="content-community" class="hidden">
                 <!-- Content will be injected by JavaScript -->
             </div>
 
@@ -183,7 +191,8 @@
             `;
 
             const planContent = `
-                <h2>Accelerated Development Plan (3-Week Sprint)</h2>
+                <h2>1.5 Week MVP Sprint (11 Days)</h2>
+                <p>This is a highly accelerated timeline to create a Minimum Viable Product (MVP). The goal is to have a playable prototype with the core economic and combat loops functional. All other features (Castles, Monetization, etc.) are planned for post-launch updates.</p>
                 <h3>Team Roles:</h3>
                 <ul>
                     <li><strong>Dedan:</strong> Lead Scripter, UI Designer, Builder</li>
@@ -191,51 +200,34 @@
                     <li><strong>Adams:</strong> Lead Builder, Lead Animator</li>
                 </ul>
                 
-                <h3><strong>Week 1: Core Loop Sprint</strong></h3>
-                <p><strong>Goal:</strong> Create a functional economic loop. From placing a beacon to generating gold.</p>
+                <h3><strong>Days 1-3: Foundation & Core Systems</strong></h3>
+                <p><strong>Goal:</strong> Get the basic framework in place. A player can join, place a beacon, and a civilian spawns.</p>
                 <ul>
-                    <li><strong>Dedan (Scripting & UI):</strong> Script core <code>KingdomManager</code> (resource tracking) and <code>UIManager</code> (displaying data). Design and implement the full UI for the Star Beacon menu.</li>
-                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the <code>PlacementManager</code> and the <code>JobManager</code>. Model all initial assets: <code>Star Beacon</code>, <code>Civilian</code>, <code>Farmer Beacon</code>, <code>Farmer</code> NPC, <code>Farm</code>, and <code>Shelter</code>. Animate essential actions.</li>
-                    <li><strong>Adams (Building & Animation):</strong> Build a polished, well-lit test map. Create all necessary visual effects (VFX): beacon placement, building completion, and NPC spawn.</li>
+                    <li><strong>Dedan (Scripting & UI):</strong> Script <code>KingdomManager</code> (player data, resources) & <code>UIManager</code> (basic resource display). Create placeholder UI for placing the Star Beacon.</li>
+                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the <code>PlacementManager</code>. Model the v1 <code>Star Beacon</code> and <code>Civilian</code> NPC.</li>
+                    <li><strong>Adams (Building & Animation):</strong> Create the initial flat test map. Create a simple "idle" animation for the Civilian.</li>
                 </ul>
 
-                <h3><strong>Week 2: Combat Prototype Sprint</strong></h3>
-                <p><strong>Goal:</strong> Implement a basic, playable combat scenario.</p>
+                <h3><strong>Days 4-7: Economic Loop</strong></h3>
+                <p><strong>Goal:</strong> A player can create a Farmer and generate Gold.</p>
                 <ul>
-                    <li><strong>Dedan (Scripting & UI):</strong> Script the high-level combat system (health, damage calculations, war state). Update the UI to show unit health.</li>
-                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the unit AI for targeting and attacking. Script the logic for the <code>Soldier Beacon</code>. Model the <code>Soldier</code> NPC and <code>Armory</code>. Animate combat actions.</li>
-                    <li><strong>Adams (Building & Animation):</strong> Design a combat arena on the map. Refine combat animations and create impact VFX.</li>
+                    <li><strong>Dedan (Scripting & UI):</strong> Finish the main UI for buying beacons and buildings. Connect all UI buttons to backend events.</li>
+                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script the <code>JobManager</code>. Model the <code>Farmer Beacon</code>, <code>Farmer</code> NPC, and <code>Farm</code> building. Animate the Farmer's "working" loop.</li>
+                    <li><strong>Adams (Building & Animation):</strong> Create VFX for building placement and NPC spawning. Add basic aesthetic details (trees, rocks) to the map.</li>
                 </ul>
 
-                <h3><strong>Week 3: Advanced Features & Monetization Sprint</strong></h3>
-                <p><strong>Goal:</strong> Implement the Castle, RNG, and premium features.</p>
+                <h3><strong>Days 8-11: Combat Loop & Polish</strong></h3>
+                <p><strong>Goal:</strong> A player can create a Soldier and fight another player's units.</p>
                 <ul>
-                    <li><strong>Dedan (Scripting & UI):</strong>
-                        <ul>
-                            <li>Script the Castle logic as the trigger for war and King/Prince spawning.</li>
-                            <li>Implement all monetization logic: Game Passes (Mercenaries, VIP, Skins) and Developer Products (Rebuild, Boosts).</li>
-                            <li>Create all UI for these purchase options.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Ike (Scripting, Models & Animation):</strong>
-                        <ul>
-                            <li>Script the RNG system for beacon transformations.</li>
-                            <li>Model the new <strong>Castle</strong> building and one or two "Epic" NPC variants.</li>
-                            <li>Model a few cosmetic skin examples for the Castle or a unit.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Adams (Building & Animation):</strong>
-                        <ul>
-                            <li>Create unique animations for the new Epic NPC variants.</li>
-                            <li>Design a grand "rebuilding" VFX and a "boost active" VFX.</li>
-                        </ul>
-                    </li>
+                    <li><strong>Dedan (Scripting & UI):</strong> Script the basic combat system (health, damage). Create a simple debug command to make two players hostile to each other for testing.</li>
+                    <li><strong>Ike (Scripting, Models & Animation):</strong> Script basic unit AI (move and attack). Model the <code>Soldier</code> NPC and <code>Armory</code>. Animate combat actions (attack, death).</li>
+                    <li><strong>Adams (Building & Animation):</strong> Create combat VFX (hit sparks, etc.). Perform a final polish on all animations and map lighting/details.</li>
                 </ul>
             `;
 
             const monetizationContent = `
-                <h2>Monetization Strategy</h2>
-                <p>Our strategy is to provide value and convenience to paying players without creating a hard pay-to-win environment. Free-to-play players should always have a viable path to success through skill and dedication.</p>
+                <h2>Monetization Strategy (Post-MVP)</h2>
+                <p>Our strategy is to provide value and convenience to paying players without creating a hard pay-to-win environment. These features will be implemented after the core gameplay is solid.</p>
                 
                 <h3>Game Passes (One-Time Purchase)</h3>
                 <ul>
@@ -253,33 +245,66 @@
 
                 <h3>Developer Products (Consumable Purchases)</h3>
                 <ul>
-                    <li><strong>Kingdom Rebuild:</strong> After being defeated, a player is offered this one-time purchase to instantly restore their essential economic buildings (e.g., 1 Farm, 1 Lumber Mill, 1 Quarry, 3 Shelters) to get back into the game faster.</li>
+                    <li><strong>Kingdom Rebuild:</strong> After being defeated, a player is offered this one-time purchase to instantly restore their essential economic buildings.</li>
                     <li><strong>Resource Boosts:</strong> Players can purchase boosts that double the production of a specific resource (Gold, Wood, or Stone) for a limited time (e.g., 15 minutes).</li>
+                </ul>
+            `;
+
+            const communityContent = `
+                <h2>Community & Progression (Post-MVP)</h2>
+                <p>These systems are designed to reward player engagement and will be added in updates after the initial launch.</p>
+
+                <h3>Promo Code System</h3>
+                <p>Players can enter special codes (released on social media or in the community server) to receive rewards.</p>
+                <ul>
+                    <li><strong>Implementation:</strong> A "Codes" button in the game's main settings menu will open a text box for code entry.</li>
+                    <li><strong>Example Rewards:</strong> A small amount of Gold, a temporary resource boost, or an exclusive cosmetic item.</li>
+                </ul>
+
+                <h3>Achievement Badges</h3>
+                <p>Badges are visual icons displayed on a player's profile or next to their name, showcasing their accomplishments.</p>
+                <ul>
+                    <li><strong>First Victory:</strong> Awarded for winning your first war.</li>
+                    <li><strong>Master Economist:</strong> Awarded for holding over 10,000 Gold at one time.</li>
+                    <li><strong>Legendary Founder:</strong> Awarded to players who play the game during its Alpha or Beta phase.</li>
+                </ul>
+
+                <h3>In-Game Roles</h3>
+                <p>Special roles can be assigned to players to recognize their contributions to the community.</p>
+                <ul>
+                    <li><strong>Tester:</strong> Assigned to players who provide valuable feedback and bug reports.</li>
+                    <li><strong>Contributor:</strong> Assigned to community members who create helpful content.</li>
                 </ul>
             `;
 
             const tabGddButton = document.getElementById('tab-gdd');
             const tabPlanButton = document.getElementById('tab-plan');
             const tabMonetizationButton = document.getElementById('tab-monetization');
+            const tabCommunityButton = document.getElementById('tab-community');
             
             const contentGdd = document.getElementById('content-gdd');
             const contentPlan = document.getElementById('content-plan');
             const contentMonetization = document.getElementById('content-monetization');
+            const contentCommunity = document.getElementById('content-community');
 
             // Inject the content into the respective divs
             contentGdd.innerHTML = gddContent;
             contentPlan.innerHTML = planContent;
             contentMonetization.innerHTML = monetizationContent;
+            contentCommunity.innerHTML = communityContent;
 
             function setActiveTab(activeButton, activeContent) {
                 // Reset all buttons and content visibility
                 tabGddButton.classList.remove('active');
                 tabPlanButton.classList.remove('active');
                 tabMonetizationButton.classList.remove('active');
+                tabCommunityButton.classList.remove('active');
 
                 contentGdd.classList.add('hidden');
                 contentPlan.classList.add('hidden');
                 contentMonetization.classList.add('hidden');
+                contentCommunity.classList.add('hidden');
+
 
                 // Set the active button and show its content
                 activeButton.classList.add('active');
@@ -289,9 +314,10 @@
             tabGddButton.addEventListener('click', () => setActiveTab(tabGddButton, contentGdd));
             tabPlanButton.addEventListener('click', () => setActiveTab(tabPlanButton, contentPlan));
             tabMonetizationButton.addEventListener('click', () => setActiveTab(tabMonetizationButton, contentMonetization));
+            tabCommunityButton.addEventListener('click', () => setActiveTab(tabCommunityButton, contentCommunity));
 
             // Set the initial active tab on page load
-            setActiveTab(tabGddButton, contentGdd);
+            setActiveTab(tabPlanButton, contentPlan);
         });
     </script>
 
